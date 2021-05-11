@@ -1,0 +1,24 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'application'
+}
+application {
+    mainClass = 'server.Server'
+}
+shadowJar {
+    mainClassName = "server.Server"
+}
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    compile project(':shared')
+    compile 'com.fasterxml.jackson.core:jackson-core:2.6.3'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.3'
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.34.0'
+}
+test {
+    useJUnitPlatform()
+}
+repositories {
+    mavenCentral()
+}

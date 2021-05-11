@@ -1,0 +1,2 @@
+rootProject.name = 'DAT055-Supportgrup23'
+include ':shared', ':app', ':server'
